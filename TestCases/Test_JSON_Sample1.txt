@@ -1,0 +1,54 @@
+{
+    "title": "User registration",
+    "columns": 1,
+    "groups": [
+      {
+        "title": "main feilds",
+        "columns": 3,
+        "controls": [
+          {
+            "title": "Name",
+            "name": "firstName",
+            "type": "text",
+            "order": 1,
+            "required": true
+          },
+          {
+            "title": "Surname",
+            "name": "surname",
+            "type": "text",
+            "order": 2,
+            "required": true
+          },
+          {
+            "title": "Nationality",
+            "name": "nationality",
+            "type": "combobox",
+            "order": 3,
+            "data": [
+              {
+                "1": "Greek",
+                "2": "Italian",
+                "3": "French"
+              }
+            ],
+            "defaultValue": "1"
+          },
+          {
+            "title": "Address",
+            "name": "address",
+            "type": "text",
+            "span": 3,
+            "order": 4
+          },
+          {
+            "title": "Interview date",
+            "name": "interviewDate",
+            "type": "date",
+            "order": 4
+          }
+        ]
+      }
+    ]
+  }
+}

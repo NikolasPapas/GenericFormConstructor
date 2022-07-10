@@ -1,0 +1,108 @@
+{
+  "title": "User registration",
+  "columns": 1,
+  "groups": [
+    {
+      "title": "Personal data",
+      "columns": 2,
+      "controls": [
+        {
+          "title": "First Name",
+          "name": "firstName",
+          "type": "text",
+          "order": 1,
+          "required": true
+        },
+        {
+          "title": "Last Name",
+          "name": "lastName",
+          "type": "text",
+          "order": 2,
+          "required": true
+        },
+        {
+          "title": "Father Name",
+          "name": "fatherName",
+          "type": "text",
+          "order": 3,
+          "required": true
+        },
+        {
+          "title": "Father Last Name",
+          "name": "fotherLastName",
+          "type": "text",
+          "order": 4,
+          "required": true
+        },
+        {
+          "title": "Mother Name",
+          "name": "motherName",
+          "type": "text",
+          "order": 5,
+          "required": true
+        },
+        {
+          "title": "Mother Last Name",
+          "name": "motherLastName",
+          "type": "text",
+          "order": 6,
+          "required": true
+        },
+        {
+          "title": "BirthDate",
+          "name": "birthDate",
+          "type": "date",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "title": "Contact Data",
+      "columns": 3,
+      "controls": [
+        {
+          "title": "Phone",
+          "name": "phone",
+          "type": "text",
+          "order": 1,
+          "required": true
+        },
+        {
+          "title": "Mobile",
+          "name": "mobile",
+          "type": "text",
+          "order": 2,
+          "required": true
+        },
+        {
+          "title": "Email",
+          "name": "email",
+          "type": "text",
+          "order": 3,
+          "required": true
+        },
+        {
+          "title": "Address",
+          "name": "address",
+          "type": "text",
+          "span": 3,
+          "order": 4
+        },
+        {
+          "title": "City",
+          "name": "city",
+          "type": "text",
+          "order": 5,
+          "required": true
+        },
+         {
+          "title": "Postl Code",
+          "name": "postalCode",
+          "type": "text",
+          "order": 5,
+          "required": true
+        }
+      ]
+    }
+  ]
+}
