@@ -5,8 +5,8 @@
       <mat-form-field class="col-10" appearance="standard">
         <input matInput [(ngModel)]="initialFormStructure">
       </mat-form-field>
-      <button class="col-2">
-        <mat-icon (click)="selectNewJson($event)" aria-hidden="false" aria-label="compare_arrows">compare_arrows</mat-icon>
+      <button class="col-2" (click)="selectNewJson($event)">
+        <mat-icon aria-hidden="false" aria-label="compare_arrows">compare_arrows</mat-icon>
       </button>
     </div>
   </mat-card>
@@ -15,11 +15,13 @@
       <div class="col-12">
         <h3><b>{{homeForm.get('title')?.value}}</b></h3>
       </div>
-      <mat-grid-list class="col-12" rowHeight="20em" cols="10">
-        <mat-grid-tile [colspan]="columnSpan" *ngFor="let item of homeForm.get('groups')?.value?.controls; let i = index;">
-          <app-listing class="col-12" [itemData]="homeData?.groups[i]" [form]="form.get('data')?.controls[i]" [listingForm]="item" [index]="i"></app-listing>
-        </mat-grid-tile>
-      </mat-grid-list>
+      <div class="matGridList col-12 row">
+        <mat-grid-list class="col-12 row" rowHeight="35em" cols="10">
+          <mat-grid-tile class="col-12 row" [colspan]="columnSpan" *ngFor="let item of homeForm.get('groups')?.value?.controls; let i = index;">
+            <app-listing class="col-12" [itemData]="homeData?.groups[i]" [form]="form.get('data')?.controls[i]" [listingForm]="item" [index]="i"></app-listing>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
     </form>
   </mat-card>
 
@@ -33,7 +35,7 @@
             <mat-option *ngFor="let option of getArray()" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button  class="col-1" (click)="selectOldJson($event)">
+        <button class="col-1" (click)="selectOldJson($event)">
           <mat-icon aria-hidden="false" aria-label="search">search</mat-icon>
         </button>
       </div>
