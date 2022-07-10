@@ -1,0 +1,32 @@
+<mat-card class="card row col-12">
+  <h6 class="col-12"><b>{{itemForm.get('title')?.value}}</b></h6>
+  <!-- <h6 class="col-12"><b>{{itemForm.get('name')?.value}}</b></h6> -->
+
+  <mat-form-field appearance="standard" class="col-12" *ngIf="itemForm.get('type')?.value == ItemDataModelType.text && form.get(itemForm.get('name')?.value)!=null">
+    <input matInput [formControl]="form.get(itemForm.get('name')?.value)">
+    <mat-error *ngIf="itemForm.get('required')?.value===true && form.get(itemForm.get('name')?.value)?.value===null">REQUIRED</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" *ngIf="itemForm.get('type')?.value == ItemDataModelType.date && form.get(itemForm.get('name')?.value)!=null">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" [formControl]="form.get(itemForm.get('name')?.value)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="itemForm.get('required')?.value===true && form.get(itemForm.get('name')?.value)?.value===null">REQUIRED</mat-error>
+  </mat-form-field>
+
+<!-- 
+  <mat-form-field appearance="standard" class="col-12" *ngIf="itemForm.get('type')?.value == ItemDataModelType.combobox && form.get(itemForm.get('name')?.value)!=null">
+    <input matInput [formControl]="form.get(itemForm.get('name')?.value)">
+    <mat-error *ngIf="itemForm.get('required')?.value===true && form.get(itemForm.get('name')?.value)?.value===null">REQUIRED</mat-error>
+  </mat-form-field> -->
+
+  <mat-form-field class="col-12" *ngIf="itemForm.get('type')?.value == ItemDataModelType.combobox && form.get(itemForm.get('name')?.value)!=null">
+    <mat-select [formControl]="form.get(itemForm.get('name')?.value)">
+      <mat-option *ngFor="let option of getArray(); trackBy: legalFormsTrackByFn" [value]="option">{{option}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="itemForm.get('required')?.value===true && form.get(itemForm.get('name')?.value)?.value===null">REQUIRED</mat-error>
+  </mat-form-field>
+
+</mat-card>

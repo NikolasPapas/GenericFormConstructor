@@ -1,0 +1,51 @@
+<div class="row">
+  <mat-card class="col-12 row">
+    <div class="col-12 row justify-content-end">
+      <h3><b>Form Definition</b></h3>
+      <mat-form-field class="col-10" appearance="standard">
+        <input matInput [(ngModel)]="initialFormStructure">
+      </mat-form-field>
+      <button class="col-2">
+        <mat-icon (click)="selectNewJson($event)" aria-hidden="false" aria-label="compare_arrows">compare_arrows</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+  <mat-card class="col-12 row">
+    <form>
+      <div class="col-12">
+        <h3><b>{{homeForm.get('title')?.value}}</b></h3>
+      </div>
+      <mat-grid-list class="col-12" rowHeight="20em" cols="10">
+        <mat-grid-tile [colspan]="columnSpan" *ngFor="let item of homeForm.get('groups')?.value?.controls; let i = index;">
+          <app-listing class="col-12" [itemData]="homeData?.groups[i]" [form]="form.get('data')?.controls[i]" [listingForm]="item" [index]="i"></app-listing>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+  <mat-card class="col-12 row">
+    <div class="col-12 row justify-content-end">
+      <h3><b>Form result on Json</b></h3>
+
+      <div class="col-12 row justify-content-end" *ngIf="getArray().length>1">
+        <mat-form-field class="col-2">
+          <mat-select [(ngModel)]="selectedResult">
+            <mat-option *ngFor="let option of getArray()" [value]="option">{{option}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button  class="col-1" (click)="selectOldJson($event)">
+          <mat-icon aria-hidden="false" aria-label="search">search</mat-icon>
+        </button>
+      </div>
+
+      <mat-form-field class="col-10" appearance="standard">
+        <input matInput [ngModel]="resultForm" disabled="true">
+      </mat-form-field>
+      <button class="col-2" [disabled]="!this.form.valid" (click)="getResult($event)">
+        <mat-icon aria-hidden="false" aria-label="compare_arrows">done</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+
+
+</div>

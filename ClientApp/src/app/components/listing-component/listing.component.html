@@ -1,0 +1,8 @@
+<div class="row">
+  <h4 class="col-12"><b>{{listingForm.get('title')?.value}}</b></h4>
+  <mat-grid-list class="col-12" rowHeight="9em" cols="10">
+    <mat-grid-tile [colspan]="columnSpan" *ngFor="let item of getOrderedList(); let i = index;">
+      <app-item class="col-12"  [itemData]="getOrderedItemDataList()[i]" [form]="form" [listingForm]="item" [index]="i"></app-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
