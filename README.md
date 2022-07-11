@@ -1,7 +1,7 @@
 # The GenericFormConstructor
-A Web Application to create a form and fill it with values. Also, you can export the result on a JSON object.
+Α Web Application for creating a form and filling it with values. Also, you can export the result on a JSON object.
 
-Using this Web Application you can create a custom form and fill it and in the end, you also can get the result of that form in JSON object exported in string, and also you can see the previous results.
+Using this Web Application you can create a custom form, fill it and in the end, you  can get the result of that form in JSON object,exported it in string, as you are able to see the previous results.
 
 ## JSON Definition 
 [JSON Definition] how to can Create Yor own form to use that app
